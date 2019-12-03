@@ -9,10 +9,22 @@ class PostController extends Controller
     // 列表
     public function index()
     {
-        return view("post/index");
+        $posts = [
+            [
+                'title' => "this is title1",
+            ],
+            [
+                'title' => "this is title2",
+            ],
+            [
+                'title' => "this is title3",
+            ],
+        ];
+        $topics = [];
+        return view("post/index",compact('posts','topics'));
     }
 
-    // 列表
+    // 详情
     public function show()
     {
         return view("post/show");
@@ -33,7 +45,7 @@ class PostController extends Controller
     // 编辑页面
     public function edit()
     {
-
+        return vie("post/edis");
     }
 
     // 编辑逻辑
