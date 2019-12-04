@@ -34,10 +34,10 @@
         <div>
             @foreach($posts as $post)
                 <div class="blog-post">
-                    <h2 class="blog-post-title"><a href="/posts/62" >{{$post['title']}}</a></h2>
-                    <p class="blog-post-meta">May 14, 2017 by <a href="/user/5">Kassandra Ankunding2</a></p>
+                    <h2 class="blog-post-title"><a href="/posts/{{$post->id}}" >{{$post->title}}</a></h2>
+                    <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/user/5">{$post->user->name{}}</a></p>
 
-                    <p>你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好你好...
+                    <p>{{$post->content}}
                     <p class="blog-post-meta">赞 0  | 评论 0</p>
                 </div>
             @endforeach
